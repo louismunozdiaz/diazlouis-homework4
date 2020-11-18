@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=decide-width, initial-scale=1.0" name="viewport">
+    <link href="stylesheet.css" rel="stylesheet">
+    <title>Homework 3</title>
+</head>
+<body>
+<form action="addEmployee.html">
+    <input type="submit" value="Add New Employee">
+</form>
+<br>
+<table id="employees">
+    <tr>
+        <th><a href="index.html">EID</a></th>
+        <th><a href="name.html">NAME</a></th>
+        <th><a href="position.html">POSITION</a></th>
+        <th><a href="yos.html">YoS</a></th>
+        <th><a href="salary.html">SALARY</a></th>
+        <th><a href="sid.html">SID</a></th>
+    </tr>
+    <tr>
+        <td>
+            <label for="eid"></label>
+            <input id="eid" placeholder="e.g. 93612" size="10" type="text">
+        </td>
+        <td>
+            <label for="name"></label>
+            <input id="name" placeholder="e.g. John Doe" size="10" type="text">
+        </td>
+        <td>
+            <label for="positions"></label>
+            <select id="positions" name="positions">
+                <option>none</option>
+                <option>E-0</option>
+                <option>E-1</option>
+                <option>E-2</option>
+                <option>E-3</option>
+                <option>E-4</option>
+                <option>E-5</option>
+                <option>E-6</option>
+                <option>E-7</option>
+                <option>E-8</option>
+                <option>E-9</option>
+            </select>
+        </td>
+        <td>
+            <label for="yos"></label>
+            <input id="yos" placeholder="e.g. 6" size="2" type="text">
+        </td>
+        <td>
+            <label for="salary"></label>
+            <input id="salary" placeholder="e.g. 45,000" size="10" type="text">
+        </td>
+        <td>
+            <label for="sid"></label>
+            <select id="sid" name="sid">
+                <option>none</option>
+                <option>15330</option>
+                <option>22863</option>
+                <option>38469</option>
+                <option>39214</option>
+                <option>43155</option>
+                <option>45996</option>
+                <option>55616</option>
+                <option>57794</option>
+                <option>57924</option>
+                <option>58809</option>
+                <option>59868</option>
+                <option>64351</option>
+                <option>67555</option>
+                <option>76828</option>
+                <option>77286</option>
+                <option>80804</option>
+                <option>91472</option>
+                <option>92789</option>
+                <option>95778</option>
+                <option>99420</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>53769</td>
+        <td>Rodgers, Belle</td>
+        <td>E-4</td>
+        <td>30</td>
+        <td>23287.986589703592</td>
+        <td>22863</td>
+    </tr>
+    <tr>
+        <td>63225</td>
+        <td>Rodgers, Belle</td>
+        <td>E-6</td>
+        <td>40</td>
+        <td>86490.77050901289</td>
+        <td>22863</td>
+    </tr>
+    <tr>
+        <td>42557</td>
+        <td>Rodgers, Michael</td>
+        <td>E-6</td>
+        <td>24</td>
+        <td>55427.530149714265</td>
+        <td>22863</td>
+    </tr>
+    <tr>
+        <td>42392</td>
+        <td>Ruth, Michael</td>
+        <td>E-6</td>
+        <td>44</td>
+        <td>55970.23016693755</td>
+        <td>38469</td>
+    </tr>
+    <tr>
+        <td>26995</td>
+        <td>Trubisky, Michael</td>
+        <td>E-9</td>
+        <td>42</td>
+        <td>45363.27390239505</td>
+        <td>38469</td>
+    </tr>
+    <tr>
+        <td>37289</td>
+        <td>Trubisky, Rhubarb</td>
+        <td>E-5</td>
+        <td>0</td>
+        <td>51553.632563481544</td>
+        <td>39214</td>
+    </tr>
+    <tr>
+        <td>44888</td>
+        <td>Ruth, Rhubarb</td>
+        <td>E-4</td>
+        <td>13</td>
+        <td>72609.83983671668</td>
+        <td>39214</td>
+    </tr>
+    <tr>
+        <td>44613</td>
+        <td>Brady, Michael</td>
+        <td>E-0</td>
+        <td>17</td>
+        <td>80914.4211149749</td>
+        <td>43155</td>
+    </tr>
+    <tr>
+        <td>58756</td>
+        <td>Brees, Michael</td>
+        <td>E-0</td>
+        <td>8</td>
+        <td>98861.9297243295</td>
+        <td>43155</td>
+    </tr>
+    <tr>
+        <td>49330</td>
+        <td>Brees, Michael</td>
+        <td>E-6</td>
+        <td>1</td>
+        <td>93285.8863302321</td>
+        <td>43155</td>
+    </tr>
+    <tr>
+        <td>29797</td>
+        <td>Ruth, Rhubarb</td>
+        <td>E-6</td>
+        <td>34</td>
+        <td>88725.99388072308</td>
+        <td>43155</td>
+    </tr>
+    <tr>
+        <td>26136</td>
+        <td>Ruth, Fonzy</td>
+        <td>E-2</td>
+        <td>34</td>
+        <td>89409.3014143205</td>
+        <td>45996</td>
+    </tr>
+    <tr>
+        <td>17933</td>
+        <td>Trubisky, Rhubarb</td>
+        <td>E-7</td>
+        <td>45</td>
+        <td>69738.3256727758</td>
+        <td>45996</td>
+    </tr>
+    <tr>
+        <td>72978</td>
+        <td>Brady, Carter</td>
+        <td>E-3</td>
+        <td>19</td>
+        <td>61444.623356969365</td>
+        <td>55616</td>
+    </tr>
+    <tr>
+        <td>38259</td>
+        <td>Brees, Michael</td>
+        <td>E-2</td>
+        <td>22</td>
+        <td>57117.25539948562</td>
+        <td>55616</td>
+    </tr>
+    <tr>
+        <td>70010</td>
+        <td>Brees, Rhubarb</td>
+        <td>E-4</td>
+        <td>42</td>
+        <td>68585.30326634891</td>
+        <td>55616</td>
+    </tr>
+    <tr>
+        <td>64636</td>
+        <td>Rodgers, Beignet</td>
+        <td>E-8</td>
+        <td>49</td>
+        <td>61926.2926351737</td>
+        <td>55616</td>
+    </tr>
+    <tr>
+        <td>18414</td>
+        <td>Ruth, Belle</td>
+        <td>E-7</td>
+        <td>15</td>
+        <td>44282.6316640916</td>
+        <td>55616</td>
+    </tr>
+    <tr>
+        <td>99174</td>
+        <td>Trubisky, Carter</td>
+        <td>E-0</td>
+        <td>14</td>
+        <td>32559.18606856937</td>
+        <td>55616</td>
+    </tr>
+    <tr>
+        <td>43621</td>
+        <td>Rodgers, Fonzy</td>
+        <td>E-3</td>
+        <td>21</td>
+        <td>80543.65515952182</td>
+        <td>55616</td>
+    </tr>
+    <tr>
+        <td>80046</td>
+        <td>Trubisky, Belle</td>
+        <td>E-6</td>
+        <td>25</td>
+        <td>56177.521205718185</td>
+        <td>57924</td>
+    </tr>
+    <tr>
+        <td>87434</td>
+        <td>Brady, Carter</td>
+        <td>E-1</td>
+        <td>27</td>
+        <td>50339.81498611468</td>
+        <td>58809</td>
+    </tr>
+    <tr>
+        <td>12063</td>
+        <td>Brady, Rhubarb</td>
+        <td>E-6</td>
+        <td>23</td>
+        <td>19064.887869828763</td>
+        <td>59868</td>
+    </tr>
+    <tr>
+        <td>28160</td>
+        <td>Rodgers, Beignet</td>
+        <td>E-4</td>
+        <td>4</td>
+        <td>19041.097012094157</td>
+        <td>59868</td>
+    </tr>
+    <tr>
+        <td>41828</td>
+        <td>Brees, Rhubarb</td>
+        <td>E-3</td>
+        <td>29</td>
+        <td>12403.489636512677</td>
+        <td>59868</td>
+    </tr>
+    <tr>
+        <td>98351</td>
+        <td>Rodgers, Rhubarb</td>
+        <td>E-1</td>
+        <td>43</td>
+        <td>62226.073831141846</td>
+        <td>59868</td>
+    </tr>
+    <tr>
+        <td>64227</td>
+        <td>Trubisky, Michael</td>
+        <td>E-3</td>
+        <td>14</td>
+        <td>42988.80674332108</td>
+        <td>59868</td>
+    </tr>
+    <tr>
+        <td>82806</td>
+        <td>Ruth, Fonzy</td>
+        <td>E-7</td>
+        <td>19</td>
+        <td>14968.50783401813</td>
+        <td>59868</td>
+    </tr>
+    <tr>
+        <td>65268</td>
+        <td>Brees, Belle</td>
+        <td>E-2</td>
+        <td>28</td>
+        <td>38213.85336451053</td>
+        <td>59868</td>
+    </tr>
+    <tr>
+        <td>53430</td>
+        <td>Trubisky, Belle</td>
+        <td>E-0</td>
+        <td>46</td>
+        <td>13711.742446766928</td>
+        <td>64351</td>
+    </tr>
+    <tr>
+        <td>70390</td>
+        <td>Ruth, Belle</td>
+        <td>E-6</td>
+        <td>11</td>
+        <td>7663.355085702861</td>
+        <td>64351</td>
+    </tr>
+    <tr>
+        <td>64820</td>
+        <td>Trubisky, Rhubarb</td>
+        <td>E-3</td>
+        <td>30</td>
+        <td>71807.40300794932</td>
+        <td>67555</td>
+    </tr>
+    <tr>
+        <td>83527</td>
+        <td>Rodgers, Fonzy</td>
+        <td>E-3</td>
+        <td>6</td>
+        <td>67469.74087822101</td>
+        <td>67555</td>
+    </tr>
+    <tr>
+        <td>49641</td>
+        <td>Trubisky, Fonzy</td>
+        <td>E-9</td>
+        <td>5</td>
+        <td>12441.465095135063</td>
+        <td>67555</td>
+    </tr>
+    <tr>
+        <td>57100</td>
+        <td>Trubisky, Rhubarb</td>
+        <td>E-4</td>
+        <td>48</td>
+        <td>77880.5638100291</td>
+        <td>67555</td>
+    </tr>
+    <tr>
+        <td>30665</td>
+        <td>Rodgers, Michael</td>
+        <td>E-5</td>
+        <td>28</td>
+        <td>23917.262068489563</td>
+        <td>77286</td>
+    </tr>
+    <tr>
+        <td>19571</td>
+        <td>Brady, Fonzy</td>
+        <td>E-8</td>
+        <td>16</td>
+        <td>70126.00803102023</td>
+        <td>80804</td>
+    </tr>
+    <tr>
+        <td>63016</td>
+        <td>Ruth, Rhubarb</td>
+        <td>E-4</td>
+        <td>41</td>
+        <td>29039.567746698558</td>
+        <td>80804</td>
+    </tr>
+    <tr>
+        <td>29785</td>
+        <td>Rodgers, Belle</td>
+        <td>E-3</td>
+        <td>10</td>
+        <td>88855.89923781778</td>
+        <td>80804</td>
+    </tr>
+    <tr>
+        <td>63606</td>
+        <td>Brady, Belle</td>
+        <td>E-6</td>
+        <td>20</td>
+        <td>80725.58421588335</td>
+        <td>91472</td>
+    </tr>
+    <tr>
+        <td>46061</td>
+        <td>Brees, Beignet</td>
+        <td>E-8</td>
+        <td>43</td>
+        <td>24973.650810759562</td>
+        <td>91472</td>
+    </tr>
+    <tr>
+        <td>99691</td>
+        <td>Trubisky, Rhubarb</td>
+        <td>E-7</td>
+        <td>22</td>
+        <td>63294.8949250394</td>
+        <td>91472</td>
+    </tr>
+    <tr>
+        <td>66667</td>
+        <td>Rodgers, Fonzy</td>
+        <td>E-0</td>
+        <td>38</td>
+        <td>52232.696834420814</td>
+        <td>91472</td>
+    </tr>
+    <tr>
+        <td>50634</td>
+        <td>Brees, Beignet</td>
+        <td>E-0</td>
+        <td>15</td>
+        <td>63089.384660236945</td>
+        <td>99420</td>
+    </tr>
+    <tr>
+        <td>61302</td>
+        <td>Trubisky, Carter</td>
+        <td>E-3</td>
+        <td>34</td>
+        <td>41730.55907671759</td>
+        <td>99420</td>
+    </tr>
+    <tr>
+        <td>18611</td>
+        <td>Trubisky, Carter</td>
+        <td>E-4</td>
+        <td>0</td>
+        <td>83829.75716512685</td>
+        <td>99420</td>
+    </tr>
+    <tr>
+        <td>49735</td>
+        <td>Brady, Rhubarb</td>
+        <td>E-8</td>
+        <td>16</td>
+        <td>31643.192784199193</td>
+        <td>99420</td>
+    </tr>
+    <tr>
+        <td>79402</td>
+        <td>Rodgers, Beignet</td>
+        <td>E-1</td>
+        <td>25</td>
+        <td>42209.45152071836</td>
+        <td>99420</td>
+    </tr>
+    <tr>
+        <td>48772</td>
+        <td>Trubisky, Michael</td>
+        <td>E-8</td>
+        <td>41</td>
+        <td>37844.42611908579</td>
+        <td>99420</td>
+    </tr>
+</table>
+</body>
+</html>
