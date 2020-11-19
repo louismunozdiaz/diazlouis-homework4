@@ -5,6 +5,11 @@ import { MatDialogRef } from '@angular/material/dialog'
 import { EmployeeService } from 'src/app/services/employee.service';
 import { SupervisorService } from 'src/app/services/supervisor.service';
 
+/**
+ * This is the employee form component.
+ * I used it for both Add and Update employee.
+ */
+
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -24,8 +29,10 @@ export class EmployeeComponent implements OnInit {
     this.getSupervisorData();
   }
 
+  // Logic for clicking the submit button.
   onSubmit() {
     if (this.service.form.valid) {
+      // if employee does not exist, add new one.
       if (!this.service.form.get('eid').value) {
         this.service.addEmployee(this.service.form.value).subscribe(
           data => {
@@ -33,6 +40,7 @@ export class EmployeeComponent implements OnInit {
           }
         );
       }
+      // if employee exists, update it.
       else {
         this.service.putEmployee(this.service.form.value).subscribe(
           data => {
@@ -46,6 +54,7 @@ export class EmployeeComponent implements OnInit {
     }
   }
 
+  // Logic for the close button.
   onClose() {
     this.service.form.reset();
     this.service.initializeFormGroup();

@@ -4,40 +4,45 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Employee } from '../model/employee';
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+/**
+ * 
+ */
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
 
-  private url: string = "http://localhost:8080/employees";
+  readonly URL_PREFIX: string = "http://localhost:8080";
 
   constructor(private httpClient: HttpClient) { }
 
+  /**
+   * The following methods communicates with 
+   * spring boot endpoints to manipulate the database.
+   */
+  
   getEmployees(): Observable<Employee[]> {
-    return this.httpClient.get<Employee[]>(this.url);
+    return this.httpClient.get<Employee[]>(this.URL_PREFIX + "/employees");
+  }
+
+  getEmployee(eid: number): Observable<Employee> {
+    return this.httpClient.get<Employee>(this.URL_PREFIX + "/employee/byeid/" + eid);
   }
 
   addEmployee(employee: Employee): Observable<Employee> {
-    return this.httpClient.post<Employee>(this.url, employee);
+    return this.httpClient.post<Employee>(this.URL_PREFIX + "/employees", employee);
   }
 
   putEmployee(employee: Employee): Observable<Employee> {
-    return this.httpClient.put<Employee>(this.url, employee);
+    return this.httpClient.put<Employee>(this.URL_PREFIX + "/employees", employee);
   }
 
   deleteEmployee(employee: Employee): Observable<{}> {
-    const delete_url = "http://localhost:8080/employee/delete/byeid/";
-    return this.httpClient.delete(delete_url + employee.eid);
+    return this.httpClient.delete(this.URL_PREFIX + "/employee/delete/byeid/" + employee.eid);
   }
 
-  populateForm(employee: Employee) {
-    this.form.setValue(employee);
-  }
-
+  // FormGroup used by the employee.component
   form: FormGroup = new FormGroup({
     eid: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(5)]),
     name: new FormControl('', Validators.required),
@@ -47,14 +52,20 @@ export class EmployeeService {
     sid: new FormControl('', Validators.required)
   });
 
+  // set the form's default values
   initializeFormGroup() {
     this.form.setValue({
-      eid:'',
-      name:'',
-      position:'',
-      yos:'',
-      salary:'',
-      sid:'',
+      eid: '',
+      name: '',
+      position: '',
+      yos: '',
+      salary: '',
+      sid: '',
     })
+  }
+
+  // fill the form using an employee object
+  populateForm(employee: Employee) {
+    this.form.setValue(employee);
   }
 }
