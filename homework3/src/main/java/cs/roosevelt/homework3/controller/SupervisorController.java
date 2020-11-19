@@ -29,7 +29,7 @@ public class SupervisorController {
     }
 
     @GetMapping(value = {"/supervisors/list"})
-    public void  getSupervisorsSid() {
-        supervisorService.getSupervisorsSid();
+    public List<Integer>  getSupervisorsSid() {
+        return supervisorService.getSupervisorsSid();
     }
 }

@@ -1,0 +1,11 @@
+div.cotainer{
+    margin: 0px 40px;
+}
+
+.mat-toolbar{
+    background: white;
+}
+
+.fill-space{
+    flex: 1 1 auto;
+}

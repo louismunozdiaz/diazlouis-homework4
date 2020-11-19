@@ -1,0 +1,53 @@
+<mat-toolbar>
+    <span>{{ service.form.controls['name'].value?"Update Employee":"New Employee" }}</span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabindex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+    <mat-grid-list cols="2" rowHeight="400">
+        <mat-grid-tile>
+            <div class="controles-container">
+                <mat-form-field>
+                    <input formControlName="eid" matInput placeholder="Employee ID">
+                    <mat-error *ngIf="service.form.controls['eid'].errors?.required">Required field.</mat-error>
+                    <mat-error *ngIf="service.form.controls['eid'].errors?.minlength">Must be 5 digits.</mat-error>
+                    <mat-error *ngIf="service.form.controls['eid'].errors?.maxlength">Must be 5 digits.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="name" matInput placeholder="Name">
+                    <mat-error *ngIf="service.form.controls['name'].errors?.required">Required field.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="position" matInput placeholder="Position">
+                    <mat-error *ngIf="service.form.controls['position'].errors?.required">Required field.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="yos" matInput placeholder="Service Years">
+                    <mat-error *ngIf="service.form.controls['yos'].errors?.required">Required field.</mat-error>
+                    <mat-error *ngIf="service.form.controls['yos'].errors?.min">Must be at least 0.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="salary" matInput placeholder="Salary">
+                    <mat-error *ngIf="service.form.controls['salary'].errors?.required">Required field.</mat-error>
+                    <mat-error *ngIf="service.form.controls['salary'].errors?.min">Must be at least 0.</mat-error>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controles-container">
+                <mat-form-field>
+                    <mat-select formControlName="sid" placeholder="Supervisor ID">
+                        <mat-option>None</mat-option>
+                        <ng-container *ngFor="let supervisor of supervisors">
+                            <mat-option value="{{ supervisor.sid }}">{{ supervisor.sid }} - {{ supervisor.name }}</mat-option>
+                        </ng-container>
+                    </mat-select>
+                </mat-form-field>
+                <div class="button-row">
+                    <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+                    <button mat-raised-button color="warn" type="reset">Clear</button>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</form>

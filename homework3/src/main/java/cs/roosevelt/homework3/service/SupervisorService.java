@@ -7,6 +7,7 @@ import cs.roosevelt.homework3.repository.SupervisorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,10 +48,7 @@ public class SupervisorService {
         return supervisors;
     }
 
-    public void getSupervisorsSid() {
-        for (Supervisor supervisor :
-                supervisorRepository.getAllSid()) {
-            System.out.println(supervisor.getSid());
-        }
+    public List<Integer> getSupervisorsSid() {
+        return (ArrayList) supervisorRepository.findAll();
     }
 }

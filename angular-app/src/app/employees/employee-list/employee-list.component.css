@@ -1,0 +1,71 @@
+table {
+    width: 100%;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+  
+  tr.detail-row {
+    height: 0;
+  }
+  
+  tr.element-row:not(.expanded-row):hover {
+    background: whitesmoke;
+  }
+  
+  tr.element-row:not(.expanded-row):active {
+    background: #efefef;
+  }
+  
+  .element-row td {
+    border-bottom-width: 0;
+  }
+  
+  .element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .element-eid, .element-name, .element-position,
+  .element-yos, .element-salary, .element-sid {
+    padding: 16px;
+    opacity: 0.5;
+  }
+
+  .hide{
+    display: none;
+  }
+
+  mat-footer-row, mat-footer-cell{
+    justify-content: center;
+    font-style: italic;
+  }
+
+  /* .search-div{
+    margin: 10px;
+  } */
+
+  .search-form-field{
+    width: 60%;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    }
+
+  .search-form-field div.mat-form-field-underline {
+    display: none;
+  }
+
+  .search-form-field div.mat-form-field-infix{
+    border-top: 0px;
+  }
+
+  .search-form-field div.mat-form-field-wrapper{
+    padding-bottom: 0px;
+  }
+
+  .search-form-field div.mat-form-field-suffix button{
+    height: 32px;
+    width: 32px;
+  }
