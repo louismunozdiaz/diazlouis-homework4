@@ -7,6 +7,7 @@ import { Employee } from 'src/app/model/employee';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog'
 import { EmployeeComponent } from '../employee/employee.component';
+import { EmployeeUpdateComponent } from 'src/app/employees/employee-update/employee-update.component';
 
 @Component({
   selector: 'app-employee-list',
@@ -67,11 +68,11 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
-    this.dialog.open(EmployeeComponent, dialogConfig);
+    this.dialog.open(EmployeeUpdateComponent, dialogConfig);
   }
 
   onDelete(employee: Employee) {
-    if (confirm('Are you sure to delete this record?')) {
+    if (confirm('Are you sure?')) {
       this.service.deleteEmployee(employee).subscribe(
         data => {
           alert("Employee deleted successfully");

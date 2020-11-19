@@ -12,13 +12,15 @@ import { EmployeeComponent } from './employees/employee/employee.component';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 import { SupervisorService } from './services/supervisor.service';
+import { EmployeeUpdateComponent } from './employees/employee-update/employee-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeesComponent,
     EmployeeComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    EmployeeUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { SupervisorService } from './services/supervisor.service';
   providers: [EmployeeService, SupervisorService],
   bootstrap: [AppComponent],
   entryComponents: [
-    EmployeeComponent
+    EmployeeComponent,
+    EmployeeUpdateComponent
   ]
 })
 export class AppModule { }

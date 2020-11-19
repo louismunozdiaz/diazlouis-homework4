@@ -1,6 +1,6 @@
 <mat-toolbar>
     <span class="fill-remaining-space"></span>
-    <span>New Employee</span>
+    <span>Update Employee</span>
     <span class="fill-remaining-space"></span>
     <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabindex="-1"><mat-icon>clear</mat-icon></button>
 </mat-toolbar>
@@ -34,12 +34,10 @@
                     <mat-error *ngIf="service.form.controls['salary'].errors?.min">Must be at least 0.</mat-error>
                 </mat-form-field>
                 <mat-form-field>
-                    <mat-select formControlName="sid" placeholder="Supervisor ID">
-                        <mat-option>None</mat-option>
-                        <ng-container *ngFor="let supervisor of supervisors">
-                            <mat-option value="{{ supervisor.sid }}">{{ supervisor.sid }} - {{ supervisor.name }}</mat-option>
-                        </ng-container>
-                    </mat-select>
+                    <input formControlName="sid" matInput placeholder="Supervisor ID">
+                    <mat-error *ngIf="service.form.controls['sid'].errors?.required">Required field.</mat-error>
+                    <mat-error *ngIf="service.form.controls['sid'].errors?.min">Must be 5 digits.</mat-error>
+                    <mat-error *ngIf="service.form.controls['sid'].errors?.min">Must be 5 digits.</mat-error>
                 </mat-form-field>
                 <div class="button-row">
                     <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
