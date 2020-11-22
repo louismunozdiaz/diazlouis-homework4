@@ -7,7 +7,6 @@ import { SupervisorService } from 'src/app/services/supervisor.service';
 
 /**
  * This is the employee form component.
- * I used it for both Add and Update employee.
  */
 
 @Component({
