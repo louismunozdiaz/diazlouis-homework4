@@ -1,0 +1,22 @@
+<div class="table-container">
+  <table>
+    <thead>
+    <tr>
+      <th (click)="changeSort(true, false, false)">Employee ID</th>
+      <th (click)="changeSort(false, true, false)">Name</th>
+      <th (click)="changeSort(false, false, true)">Position</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>
+        <a routerLink="/employee/{{employee.eid}}" routerLinkActive="active">
+          {{employee.eid}}
+        </a>
+      </td>
+      <td>{{employee.name}}</td>
+      <td>{{employee.position}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

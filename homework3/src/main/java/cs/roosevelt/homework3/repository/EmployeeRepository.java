@@ -44,4 +44,25 @@ public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
 
     @Query(value = "SELECT * FROM EMPLOYEES ORDER BY SID", nativeQuery = true)
     Iterable<Employee> findFirstThirtyEmployeesOrderBySidAsc();
+
+    /**
+     * Homework 4 additions
+     */
+    @Query(value = "SELECT * FROM EMPLOYEES ORDER BY EID ASC", nativeQuery = true)
+    Iterable<Employee> findAllOrderByEidAsc();
+
+    @Query(value = "SELECT * FROM EMPLOYEES ORDER BY EID DESC", nativeQuery = true)
+    Iterable<Employee> findAllOrderByEidDesc();
+
+    @Query(value = "SELECT * FROM EMPLOYEES ORDER BY NAME ASC", nativeQuery = true)
+    Iterable<Employee> findAllOrderByNameAsc();
+
+    @Query(value = "SELECT * FROM EMPLOYEES ORDER BY NAME DESC", nativeQuery = true)
+    Iterable<Employee> findAllOrderByNameDesc();
+
+    @Query(value = "SELECT * FROM EMPLOYEES ORDER BY POSITION ASC", nativeQuery = true)
+    Iterable<Employee> findAllOrderByPositionAsc();
+
+    @Query(value = "SELECT * FROM EMPLOYEES ORDER BY POSITION DESC", nativeQuery = true)
+    Iterable<Employee> findAllOrderByPositionDesc();
 }

@@ -51,4 +51,10 @@ public class SupervisorService {
     public List<Integer> getSupervisorsSid() {
         return (ArrayList) supervisorRepository.findAll();
     }
+
+    /**
+     * Homework 4 Redo
+     * @return
+     */
+    public List<String> getListOfSID() { return supervisorRepository.getAllSid(); }
 }

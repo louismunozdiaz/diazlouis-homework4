@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class EmployeeController {
     @Autowired
@@ -110,5 +110,38 @@ public class EmployeeController {
     @GetMapping(value = {"/employees/list"})
     public void createHTMLEmployeeList() {
         employeeService.createHTMLEmployeeListOrderByEid();
+    }
+
+    /**
+     * Homework 4 additions
+     */
+    @GetMapping(value = {"/employees/sortedbyeidasc"})
+    public List<Employee> getAllEmployeesOrderByEidAsc() {
+        return this.employeeService.getAllEmployeesOrderByEidAsc();
+    }
+
+    @GetMapping(value = {"/employees/sortedbyeiddesc"})
+    public List<Employee> getAllEmployeesOrderByEidDesc() {
+        return this.employeeService.getAllEmployeesOrderByEidDesc();
+    }
+
+    @GetMapping(value = {"/employees/sortedbynameasc"})
+    public List<Employee> getAllEmployeesOrderByNameAsc() {
+        return this.employeeService.getAllEmployeesOrderByNameAsc();
+    }
+
+    @GetMapping(value = {"/employees/sortedbynamedesc"})
+    public List<Employee> getAllEmployeesOrderByNameDesc() {
+        return this.employeeService.getAllEmployeesOrderByNameDesc();
+    }
+
+    @GetMapping(value = {"/employees/sortedbyposasc"})
+    public List<Employee> getAllEmployeesOrderByPosAsc() {
+        return this.employeeService.getAllEmployeesOrderByPositionAsc();
+    }
+
+    @GetMapping(value = {"/employees/sortedbyposdesc"})
+    public List<Employee> getAllEmployeesOrderByPosDesc() {
+        return this.employeeService.getAllEmployeesOrderByPositionDesc();
     }
 }

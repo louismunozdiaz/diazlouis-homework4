@@ -7,9 +7,15 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface SupervisorRepository extends CrudRepository<Supervisor, Integer> {
+
     /* Endpoint 6. */
     List<Supervisor> findBySid(int sid);
 
-    @Query(value = "SELECT * FROM SUPERVISORS ORDER BY SID", nativeQuery = true)
-    Iterable<Supervisor> getAllSid();
+    /**
+     * Homework 4 Redo
+     * @return
+     */
+    @Query(value = "SELECT SID FROM SUPERVISORS ORDER BY SID", nativeQuery = true)
+    List<String> getAllSid();
+
 }

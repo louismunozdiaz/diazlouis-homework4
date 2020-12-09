@@ -206,4 +206,31 @@ public class EmployeeService {
         // end of html formatting; table close tag.
         System.out.println("</table>");
     }
+
+    /**
+     * Homework 4 additions
+     */
+    public List<Employee> getAllEmployeesOrderByEidAsc() {
+        return (List<Employee>) employeeRepository.findAllOrderByEidAsc();
+    }
+
+    public List<Employee> getAllEmployeesOrderByEidDesc() {
+        return (List<Employee>) employeeRepository.findAllOrderByEidDesc();
+    }
+
+    public List<Employee> getAllEmployeesOrderByNameAsc() {
+        return (List<Employee>) employeeRepository.findAllOrderByNameAsc();
+    }
+
+    public List<Employee> getAllEmployeesOrderByNameDesc() {
+        return (List<Employee>) employeeRepository.findAllOrderByNameDesc();
+    }
+
+    public List<Employee> getAllEmployeesOrderByPositionAsc() {
+        return (List<Employee>) employeeRepository.findAllOrderByPositionAsc();
+    }
+
+    public List<Employee> getAllEmployeesOrderByPositionDesc() {
+        return (List<Employee>) employeeRepository.findAllOrderByPositionDesc();
+    }
 }

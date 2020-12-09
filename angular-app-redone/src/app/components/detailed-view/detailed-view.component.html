@@ -1,0 +1,43 @@
+<div class="main-container">
+  <div class="info-container">
+    <form (ngSubmit)="onSubmit()">
+
+      <label>EID: </label>
+      <input [(ngModel)]="employee.eid" name="eid" type="text">
+
+      <br><br>
+
+      <label>Name: </label>
+      <input [(ngModel)]="employee.name" name="name" type="text">
+
+      <br><br>
+
+      <label>Position: </label>
+      <input [(ngModel)]="employee.position" name="position" type="text">
+
+      <br><br>
+
+      <label>Salary: </label>
+      <input [(ngModel)]="employee.salary" name="salary" type="text">
+
+      <br><br>
+
+      <label>YoS: </label>
+      <input [(ngModel)]="employee.yos" name="yos" type="text">
+
+      <br><br>
+
+      <label>SID: </label>
+      <select [(ngModel)]="employee.sid" name="sid" type="text">
+        <option *ngFor="let sid of sidList">{{sid}}</option>
+      </select>
+
+      <br><br>
+
+      <button type="submit">Update</button>
+
+      <button (click)="delete(employee.eid)" type="button">Delete</button>
+
+    </form>
+  </div>
+</div>
